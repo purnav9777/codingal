@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open World Game</title>
+  <style>
+    body { margin: 0; overflow: hidden; }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.rawgit.com/schteppe/cannon.js/master/dist/cannon.js"></script>
+  <script>
+    // Initialize the scene, camera, and renderer
+    let scene = new THREE.Scene();
+    let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    let renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // Add a basic light
+    let light = new THREE.AmbientLight(0x404040, 2);
+    scene.add(light);
+
+    // Create a basic road (plane)
+    let geometry = new THREE.PlaneGeometry(10, 100, 10, 10);
+    let material = new THREE.MeshLambertMaterial({ color: 0x808080 });
+    let road = new THREE.Mesh(geometry, material);
+    road.rotation.x = - Math.PI / 2;
+    scene.add(road);
+
+    // Create a basic building (cube)
+    let buildingGeometry = new THREE.BoxGeometry(3, 10, 3);
+    let buildingMaterial = new THREE.MeshLambertMaterial({ color: 0x9b59b6 });
+    let building = new THREE.Mesh(buildingGeometry, buildingMaterial);
+    building.position.set(0, 5, 0);
+    scene.add(building);
+
+    // Add a simple car (cube)
+    let carGeometry = new THREE.BoxGeometry(1, 0.5, 2);
+    let carMaterial = new THREE.MeshLambertMaterial({ color: 0xff0000 });
+    let car = new THREE.Mesh(carGeometry, carMaterial);
+    car.position.set(0, 0.25, -10);
+    scene.add(car);
+
+    // Set camera position
+    camera.position.z = 10;
+
+    // Simple render loop
+    let animate = function () {
+      requestAnimationFrame(animate);
+      car.position.x += 0.1; // Move car along the x-axis
+      renderer.render(scene, camera);
+    };
+
+    animate();
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+    });
+  </script>
+</body>
+</html>
