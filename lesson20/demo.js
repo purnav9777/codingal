@@ -16,6 +16,8 @@
    console. log(result)
  }
 
+  console.log("reference the local variable fo funcation", result)
+ 
  sum(4, 6, 10)
  sum(2, 1, 0)
 
@@ -24,7 +26,7 @@
     var r = a *  b * c * d 
     return r
  } 
- 
+
   var k = multiply(2,4,6,8)
   console.log(k)
  
