@@ -2,162 +2,110 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>RK Infinity Power Solutions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>R.K Infinity – Genset Experts</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f4f4f4;
-      color: #333;
-    }
-    header, footer {
-      background-color: #0f172a;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-    }
-    .container {
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    section {
-      margin-bottom: 50px;
-    }
-    .product {
-      background: #fff;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
-    .product img {
-      max-width: 100%;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-    .gallery img {
-      width: 100%;
-      max-width: 300px;
-      border-radius: 10px;
-    }
-    form input, form textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    form button {
-      background-color: #0f172a;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .nav-section {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-    .nav-section a {
-      background: #e2e8f0;
-      padding: 10px 15px;
-      border-radius: 6px;
-      text-decoration: none;
-      color: #0f172a;
-      font-weight: bold;
-    }
-    h2 {
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 5px;
+    body { margin: 0; font-family: Arial, sans-serif; }
+    header { background: #0a1d3b; color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; }
+    header img { height: 50px; }
+    nav a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; }
+    .hero { background: url('https://via.placeholder.com/1200x400?text=Genset+Solutions') no-repeat center/cover; color: white; text-align: center; padding: 100px 20px; }
+    .hero h1 { font-size: 40px; margin: 0; background: rgba(0,0,0,0.5); display: inline-block; padding: 10px 20px; }
+    section { padding: 40px 20px; }
+    .about, .why-us, .products { max-width: 1200px; margin: auto; }
+    .products .card { display: inline-block; width: 30%; margin: 1%; background: #f4f4f4; padding: 15px; border-radius: 8px; vertical-align: top; }
+    .products img { width: 100%; border-radius: 6px; }
+    .why-us ul { list-style: none; padding: 0; }
+    .why-us li { margin: 10px 0; padding-left: 20px; position: relative; }
+    .why-us li::before { content: "✔️"; position: absolute; left: 0; }
+    .cta { text-align: center; background: #ff8c00; color: white; padding: 40px 20px; }
+    .cta a { background: white; color: #ff8c00; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+    footer { background: #0a1d3b; color: white; text-align: center; padding: 20px; }
+    .whatsapp-button { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 8px rgba(0,0,0,0.3); }
+    @media (max-width: 768px) {
+      .products .card { width: 100%; margin-bottom: 20px; }
+      nav { display: block; text-align: center; margin-top: 10px; }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>ARK Infinity Power Solutions</h1>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#products">Products</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <!-- Header -->
+  <header>
+    <img src="https://via.placeholder.com/150x50?text=R.K+Infinity" alt="R.K Infinity Logo" />
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="quote.html">Quote</a>
+    </nav>
+  </header>
 
-<div class="container">
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Powering Your World with Reliable Gensets</h1>
+  </div>
 
-  <section id="home">
-    <h2>Welcome to ARK Infinity Power Solutions</h2>
-    <p>We are your trusted source for reliable and efficient genset (generator) solutions. From industrial backup power to portable gensets, we offer quality and performance.</p>
+  <!-- About Preview -->
+  <section class="about">
+    <h2>About R.K Infinity</h2>
+    <p>R.K Infinity is a leading provider of diesel and gas generators across India. With years of experience in power solutions, we deliver high-performance gensets that keep your business running — anytime, anywhere.</p>
+    <a href="about.html">Read More →</a>
   </section>
 
-  <section id="products">
-    <h2>Product Listings & Pricing</h2>
-
-    <div class="product">
-      <h3>10KVA Silent Diesel Genset</h3>
-      <img src="https://greavescotton.com/wp-content/uploads/2024/06/10-kVA-Org.-CPCB-II-1.webp" alt="10KVA Genset">
-      <p>Perfect for homes and small offices. Reliable backup with low noise.</p>
-      <p><strong>Price: ₹1,45,000</strong></p>
+  <!-- Product Highlights -->
+  <section class="products">
+    <h2>Featured Gensets</h2>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200?text=Genset+10kVA" alt="10kVA Genset">
+      <h3>10 kVA Genset</h3>
+      <p>Ideal for small businesses & shops. Fuel efficient and silent operation.</p>
     </div>
-
-    <div class="product">
-      <h3>25KVA Portable Genset</h3>
-      <img src="https://via.placeholder.com/600x300?text=25KVA+Genset" alt="25KVA Genset">
-      <p>Mobile-friendly solution for construction, events, and outdoor usage.</p>
-      <p><strong>Price: ₹2,60,000</strong></p>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200?text=Genset+30kVA" alt="30kVA Genset">
+      <h3>30 kVA Genset</h3>
+      <p>Mid-range generator perfect for offices, showrooms, and backup needs.</p>
     </div>
-
-    <div class="product">
-      <h3>125KVA Industrial Genset</h3>
-      <img src="https://via.placeholder.com/600x300?text=125KVA+Genset" alt="125KVA Genset">
-      <p>Heavy-duty generator designed for commercial and factory usage.</p>
-      <p><strong>Price: ₹7,25,000</strong></p>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200?text=Genset+62.5kVA" alt="62.5kVA Genset">
+      <h3>62.5 kVA Genset</h3>
+      <p>High-performance genset for industrial and heavy-load applications.</p>
     </div>
   </section>
 
-  <section id="gallery">
-    <h2>Gallery: Templates & Genset Images</h2>
-    <div class="gallery">
-      <img src=""c:\Users\pares\OneDrive\Desktop\picture\1500_DSC1727.webp alt="Template 1">
-      <img src="https://via.placeholder.com/300x200?text=Template+2" alt="Template 2">
-      <img src="https://via.placeholder.com/300x200?text=Genset+1" alt="Genset 1">
-      <img src="https://via.placeholder.com/300x200?text=Genset+2" alt="Genset 2">
-    </div>
-    <p>Replace the above images with your actual product and template images.</p>
+  <!-- Why Choose Us -->
+  <section class="why-us">
+    <h2>Why Choose R.K Infinity?</h2>
+    <ul>
+      <li>High-efficiency & silent gensets</li>
+      <li>24x7 customer support</li>
+      <li>All-India delivery</li>
+      <li>Trusted by 500+ businesses</li>
+      <li>Best-in-class warranty & service</li>
+    </ul>
   </section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="_replyto" placeholder="Your Email" required />
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+  <!-- Call to Action -->
+  <div class="cta">
+    <h2>Need a Power Solution?</h2>
+    <p>Get in touch with us to discuss your power requirements.</p>
+    <a href="quote.html">Request a Quote</a>
+  </div>
 
-</div>
+  <!-- Footer -->
+  <footer>
+    <p>Contact Us: paresh9777@gmail.com | +91 9822397779</p>
+    <p>mapusa,goa, India</p>
+    <p>&copy; 2025 R.K Infinity – All Rights Reserved</p>
+  </footer>
 
-<footer>
-  <p>&copy; 2025 RK Infinity Power Solutions. All rights reserved.</p>
-</footer>
+  <!-- WhatsApp Button -->
+  <a class="whatsapp-button" href="https://wa.me/919822397779" target="_blank">
+    💬 Chat on WhatsApp
+  </a>
 
 </body>
 </html>
