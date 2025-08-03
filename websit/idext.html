@@ -1,111 +1,73 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>R.K Infinity – Genset Experts</title>
-  <style>
-    body { margin: 0; font-family: Arial, sans-serif; }
-    header { background: #0a1d3b; color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; }
-    header img { height: 50px; }
-    nav a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; }
-    .hero { background: url('https://via.placeholder.com/1200x400?text=Genset+Solutions') no-repeat center/cover; color: white; text-align: center; padding: 100px 20px; }
-    .hero h1 { font-size: 40px; margin: 0; background: rgba(0,0,0,0.5); display: inline-block; padding: 10px 20px; }
-    section { padding: 40px 20px; }
-    .about, .why-us, .products { max-width: 1200px; margin: auto; }
-    .products .card { display: inline-block; width: 30%; margin: 1%; background: #f4f4f4; padding: 15px; border-radius: 8px; vertical-align: top; }
-    .products img { width: 100%; border-radius: 6px; }
-    .why-us ul { list-style: none; padding: 0; }
-    .why-us li { margin: 10px 0; padding-left: 20px; position: relative; }
-    .why-us li::before { content: "✔️"; position: absolute; left: 0; }
-    .cta { text-align: center; background: #ff8c00; color: white; padding: 40px 20px; }
-    .cta a { background: white; color: #ff8c00; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; }
-    footer { background: #0a1d3b; color: white; text-align: center; padding: 20px; }
-    .whatsapp-button { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 8px rgba(0,0,0,0.3); }
-    @media (max-width: 768px) {
-      .products .card { width: 100%; margin-bottom: 20px; }
-      nav { display: block; text-align: center; margin-top: 10px; }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>R.K Infinity | Genset Power Solutions</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <!-- Header -->
   <header>
-    <img src="https://via.placeholder.com/150x50?text=R.K+Infinity" alt="R.K Infinity Logo" />
+    <div class="logo">
+      <img src="images/logo.png" alt="R.K Infinity Logo">
+      <h1>R.K Infinity</h1>
+    </div>
     <nav>
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="products.html">Products</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
-      <a href="quote.html">Quote</a>
+      <a href="#">About</a>
+      <a href="#">Products</a>
+      <a href="#">Pricing</a>
+      <a href="#">Contact</a>
     </nav>
+    <a href="https://wa.me/919876543210" class="whatsapp-btn" target="_blank">💬 WhatsApp</a>
   </header>
 
   <!-- Hero Section -->
-  <div class="hero">
-    <h1>Powering Your World with Reliable Gensets</h1>
-  </div>
+  <section class="hero">
+    <h2>Reliable Genset Solutions for Your Business</h2>
+    <p>High-performance diesel and gas generators delivered across India.</p>
+    <a href="#" class="btn">Get a Quote</a>
+  </section>
 
-  <!-- About Preview -->
+  <!-- About Section -->
   <section class="about">
-    <h2>About R.K Infinity</h2>
-    <p>R.K Infinity is a leading provider of diesel and gas generators across India. With years of experience in power solutions, we deliver high-performance gensets that keep your business running — anytime, anywhere.</p>
-    <a href="about.html">Read More →</a>
+    <h2>About Us</h2>
+    <p>R.K Infinity provides industrial and commercial gensets ranging from 5kVA to 125kVA. Trusted by 500+ clients, we
+      deliver on-time, every time.</p>
   </section>
 
-  <!-- Product Highlights -->
+  <!-- Products Section -->
   <section class="products">
-    <h2>Featured Gensets</h2>
-    <div class="card">
-      <img src="https://via.placeholder.com/300x200?text=Genset+10kVA" alt="10kVA Genset">
-      <h3>10 kVA Genset</h3>
-      <p>Ideal for small businesses & shops. Fuel efficient and silent operation.</p>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/300x200?text=Genset+30kVA" alt="30kVA Genset">
-      <h3>30 kVA Genset</h3>
-      <p>Mid-range generator perfect for offices, showrooms, and backup needs.</p>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/300x200?text=Genset+62.5kVA" alt="62.5kVA Genset">
-      <h3>62.5 kVA Genset</h3>
-      <p>High-performance genset for industrial and heavy-load applications.</p>
+    <h2>Our Gensets</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="images/genset1.jpg" alt="10kVA Genset">
+        <h3>10kVA Generator</h3>
+        <p>Ideal for small shops & clinics.</p>
+      </div>
+      <div class="product-card">
+        <img src="images/genset2.jpg" alt="30kVA Genset">
+        <h3>30kVA Generator</h3>
+        <p>Perfect for small offices and buildings.</p>
+      </div>
+      <div class="product-card">
+        <img src="images/genset3.jpg" alt="62.5kVA Genset">
+        <h3>62.5kVA Generator</h3>
+        <p>Great for industries and institutions.</p>
+      </div>
     </div>
   </section>
-
-  <!-- Why Choose Us -->
-  <section class="why-us">
-    <h2>Why Choose R.K Infinity?</h2>
-    <ul>
-      <li>High-efficiency & silent gensets</li>
-      <li>24x7 customer support</li>
-      <li>All-India delivery</li>
-      <li>Trusted by 500+ businesses</li>
-      <li>Best-in-class warranty & service</li>
-    </ul>
-  </section>
-
-  <!-- Call to Action -->
-  <div class="cta">
-    <h2>Need a Power Solution?</h2>
-    <p>Get in touch with us to discuss your power requirements.</p>
-    <a href="quote.html">Request a Quote</a>
-  </div>
 
   <!-- Footer -->
   <footer>
-    <p>Contact Us: paresh9777@gmail.com | +91 9822397779</p>
-    <p>mapusa,goa, India</p>
-    <p>&copy; 2025 R.K Infinity – All Rights Reserved</p>
+    <p>Contact: info@rkinfinity.com | +91 9876543210</p>
+    <p>© 2025 R.K Infinity. All Rights Reserved.</p>
   </footer>
 
-  <!-- WhatsApp Button -->
-  <a class="whatsapp-button" href="https://wa.me/919822397779" target="_blank">
-    💬 Chat on WhatsApp
-  </a>
-
 </body>
+
 </html>
