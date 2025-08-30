@@ -1,0 +1,19 @@
+ .calculator {
+    margin: 220px auto 0px auto;
+    width: 400px;
+    background-color: white;
+    padding: 10px;;
+    border-radius: 4px;
+ }
+ .display {
+    background-color: #afafaf;
+    height: 80px;
+    text-align: right;
+    font-size: 30px;
+    padding: 20px;
+    line-height: 70px;
+    padding-right:20px;
+    border-radius: 4px;
+    font-weight: bold;
+     margin-bottom: 20;
+ }
