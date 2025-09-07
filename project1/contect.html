@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact Us — R.K Infinity</title>
+  <style>
+    :root{
+      --accent:#28a745;   /* green button */
+      --accent-2:#1c7430; /* darker green */
+      --bg:#fff200;       /* yellow background */
+      --card:#ffffff;
+      --muted:#6b7280;
+      --radius:14px;
+      --max-width:1100px;
+      --gap:18px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);  /* yellow background */
+      color:#0f1724;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:36px 20px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .wrapper{
+      width:100%;
+      max-width:var(--max-width);
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:34px;
+      align-items:start;
+    }
+
+    header{
+      grid-column: 1 / -1;
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:6px;
+    }
+    .logo {
+      width:64px;
+      height:64px;
+      border-radius:10px;
+      overflow:hidden;
+      background: #fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 6px 20px rgba(12,17,43,0.08);
+    }
+    .logo img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+    header h1{ margin:0; font-size:20px; letter-spacing:0.2px; }
+    header p{ margin:0; color:var(--muted); font-size:13px; }
+
+    .contact-card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:26px;
+      box-shadow:0 8px 30px rgba(10,20,40,0.06);
+    }
+
+    .hero-banner{
+      border-radius:12px;
+      overflow:hidden;
+      height:140px;
+      margin-bottom:18px;
+      background:rgba(40,167,69,0.08); /* soft green tint */
+      display:flex;
+      align-items:center;
+      gap:18px;
+      padding:18px;
+    }
+
+    .hero-banner img{
+      height:100%;
+      width:auto;
+      border-radius:8px;
+      object-fit:cover;
+      display:block;
+    }
+    .hero-text h2{ margin:0 0 6px 0; font-size:18px; }
+    .hero-text p{ margin:0; color:var(--muted); font-size:13px; }
+
+    form .field{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      margin-bottom:12px;
+    }
+    label{ font-size:13px; color:#223; }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select{
+      padding:12px 14px;
+      border-radius:10px;
+      border:1px solid rgba(15,23,36,0.06);
+      background:#fbfdff;
+      font-size:14px;
+      resize:vertical;
+      min-height:42px;
+    }
+    textarea{ min-height:110px; }
+
+    .row{ display:flex; gap:12px; }
+    .row .field{ flex:1; }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      margin-top:6px;
+    }
+    .btn{
+      background:var(--accent);
+      color:#fff;
+      border:none;
+      padding:12px 16px;
+      border-radius:10px;
+      font-weight:600;
+      cursor:pointer;
+      box-shadow:0 8px 18px rgba(40,167,69,0.2);
+    }
+    .btn.secondary{
+      background:#fff;
+      color:var(--accent-2);
+      border:1px solid var(--accent-2);
+      box-shadow:none;
+    }
+
+    .note{ color:var(--muted); font-size:13px; margin-top:8px; }
+
+    .sidebar{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+    .card-compact{
+      background:var(--card);
+      padding:18px;
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(9,16,34,0.04);
+    }
+    .contact-item{ display:flex; gap:12px; align-items:flex-start; }
+    .contact-item svg{ width:20px; height:20px; margin-top:3px; flex-shrink:0; }
+    .contact-item strong{ display:block; font-size:14px; }
+    .contact-item span{ color:var(--muted); font-size:13px; }
+
+    .whatsapp {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      text-decoration:none;
+      padding:10px 12px;
+      border-radius:10px;
+      font-weight:600;
+      background:linear-gradient(90deg,#25D366,#128C7E);
+      color:#fff;
+      box-shadow:0 8px 20px rgba(18,140,126,0.12);
+    }
+
+    .map{
+      background-image: url("banner.jpg");
+      background-size:cover;
+      background-position:center;
+      min-height:140px;
+      border-radius:10px;
+      display:flex;
+      align-items:flex-end;
+      padding:12px;
+      color:#fff;
+      font-weight:600;
+      text-shadow:0 2px 8px rgba(0,0,0,0.35);
+    }
+
+    .toast{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      background:#1c7430;
+      color:#fff;
+      padding:12px 16px;
+      border-radius:10px;
+      box-shadow:0 10px 30px rgba(5,20,50,0.3);
+      display:none;
+      z-index:9999;
+    }
+
+    @media (max-width:920px){
+      .wrapper{ grid-template-columns: 1fr; padding-bottom:20px; }
+      .hero-banner{ height:120px; }
+      .logo{ width:56px; height:56px; }
+    }
+    @media (max-width:520px){
+      header h1{ font-size:16px; }
+      .row{ flex-direction:column; }
+      .sidebar{ order:2; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ✅ Rest of your HTML remains the same -->
+  
+      
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="logo" aria-hidden="true">
+        <img src="logo.png" alt="R.K Infinity logo">
+      </div>
+      <div>
+        <h1>Contact R.K Infinity — Gensets & Power Solutions</h1>
+        <p>Fast replies | WhatsApp orders | Service & spare parts</p>
+      </div>
+    </header>
+
+    <!-- left: contact form -->
+    <div class="contact-card" role="region" aria-labelledby="contact-heading">
+      <div class="hero-banner">
+        <img src="genset1.jpg" alt="Generator preview" style="width:120px; height:92px; object-fit:cover; border-radius:8px;">
+        <div class="hero-text">
+          <h2 id="contact-heading">Get in touch — we’re here to help</h2>
+          <p>Fill the form or message us on WhatsApp. We typically reply within a few hours on business days.</p>
+        </div>
+      </div>
+
+      <form id="contactForm" novalidate>
+        <div class="row">
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com">
+          </div>
+          <div class="field">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject" aria-label="subject">
+              <option value="">Select subject</option>
+              <option>Sales / Product enquiry</option>
+              <option>Service / Repair</option>
+              <option>Spare parts</option>
+              <option>Bulk order / Dealer inquiry</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Write your message, requirements or order details..." required></textarea>
+        </div>
+
+        <div class="actions">
+          <button class="btn" type="submit">Send message</button>
+          <button class="btn secondary" type="button" id="clearBtn">Clear</button>
+          <a class="whatsapp" href="https://wa.me/919999999999?text=Hello%20R.K%20Infinity%2C%20I%20want%20to%20inquire%20about%20your%20gensets." target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.5 3.5C18 1 14.8 0 11.6 0 5.1 0 .2 4.9.2 11.3c0 2 0.5 3.9 1.4 5.6L0 24l7.4-1.9c1.6 0.9 3.4 1.4 5.2 1.4 6.5 0 11.4-4.9 11.4-11.4 0-3.2-1-6.3-2.9-8.6z" fill="#fff"/>
+            </svg>
+            WhatsApp
+          </a>
+        </div>
+
+        <p class="note">By sending you agree to our <a href="#" style="color:var(--accent); text-decoration:underline;">privacy policy</a>.</p>
+      </form>
+    </div>
+
+    <!-- right: sidebar -->
+    <aside class="sidebar" aria-label="Contact information">
+      <div class="card-compact">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <div>
+            <strong>R.K Infinity</strong>
+            <div style="color:var(--muted); font-size:13px;">Gensets · Power Solutions</div>
+          </div>
+          <div style="text-align:right; font-size:13px; color:var(--muted)">Open: Mon–Sat<br />9:30 AM – 6:30 PM</div>
+        </div>
+      </div>
+
+      <div class="card-compact">
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6a3 3 0 013-3h12a3 3 0 013 3v12a3 3 0 01-3 3H8l-5 3V6z" stroke="#0f1724" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div>
+            <strong>Email</strong>
+            <span><a href="mailto:info@rkinfinity.example">info@rkinfinity.example</a></span>
+          </div>
+        </div>
+
+        <hr style="border:none; height:12px;">
+
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.92V21a1 1 0 01-1.11 1A19 19 0 013 6.12 1 1 0 014 5h4.09a1 1 0 01.96.73c.2.88.58 1.74 1.12 2.55a1 1 0 01-.24 1.09L8.9 11.9a14.9 14.9 0 007.2 7.2l1.52-1.02a1 1 0 011.09-.24c.8.54 1.67.92 2.55 1.12a1 1 0 01.73.96z" stroke="#0f1724" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div>
+            <strong>Phone / WhatsApp</strong>
+            <span><a href="tel:+919999999999">+91 99999 99999</a></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-compact">
+        <div style="margin-bottom:10px; font-weight:600;">Our location</div>
+        <div class="map" role="img" aria-label="Map placeholder">
+          <div>Visit shop / service center</div>
+        </div>
+        <div style="margin-top:12px; font-size:13px; color:var(--muted);">Plot / street, City, State — <a href="#" style="color:var(--accent);">Open in Google Maps</a></div>
+      </div>
+
+      <div class="card-compact" style="display:flex; gap:10px; align-items:center; justify-content:space-between;">
+        <div>
+          <div style="font-size:13px; color:var(--muted)">Need quick help?</div>
+          <div style="font-weight:700">Call: <a href="tel:+919999999999" style="color:var(--accent);">+91 99999 99999</a></div>
+        </div>
+        <a class="whatsapp" href="https://wa.me/919999999999" target="_blank" rel="noopener">Chat</a>
+      </div>
+    </aside>
+
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite">Message sent — we'll contact you shortly!</div>
+
+  <script>
+    // Simple client-side form handler (no backend). Replace with real submit endpoint if you have one.
+    (function(){
+      const form = document.getElementById('contactForm');
+      const toast = document.getElementById('toast');
+      const clearBtn = document.getElementById('clearBtn');
+
+      function showToast(msg = 'Message sent — we will contact you shortly!'){
+        toast.textContent = msg;
+        toast.style.display = 'block';
+        setTimeout(()=> toast.style.display = 'none', 4200);
+      }
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        // basic validation
+        const name = form.name.value.trim();
+        const phone = form.phone.value.trim();
+        const message = form.message.value.trim();
+
+        if(!name || !phone || !message){
+          showToast('Please fill name, phone and message.');
+          return;
+        }
+
+        // Here you would send data to your server via fetch()/XMLHttpRequest.
+        // For this template we simulate success:
+        form.reset();
+        showToast('Thanks! Your message has been received.');
+      });
+
+      clearBtn.addEventListener('click', () => form.reset());
+    })();
+  </script>
+</body>
+</html>
+
+
