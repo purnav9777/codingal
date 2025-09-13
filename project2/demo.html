@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Record Management System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #0b6efd;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+    }
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #333;
+    }
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    input, button {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background: #0b6efd;
+      color: #fff;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #084298;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+    th {
+      background: #f0f0f0;
+    }
+    .actions button {
+      margin: 0 5px;
+      padding: 5px 10px;
+    }
+    .delete {
+      background: #dc3545;
+    }
+    .delete:hover {
+      background: #a71d2a;
+    }
+
+    /* Login Page */
+    #loginPage {
+      max-width: 400px;
+      margin: 80px auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    #loginPage h2 {
+      margin-bottom: 20px;
+    }
+    #loginPage input {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    #logoutBtn {
+      background: #ff6b6b;
+      float: right;
+    }
+    #logoutBtn:hover {
+      background: #c53030;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>speed house</h1>
+  </header>
+
+  <!-- Login Page -->
+  <div id="loginPage">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button onclick="login()">Login</button>
+    <p id="error" style="color:red;"></p>
+  </div>
+
+  <!-- Record Page -->
+  <div class="container" id="recordPage" style="display:none;">
+    <button id="logoutBtn" onclick="logout()">Logout</button>
+    <h2>Add New Record</h2>
+    <form id="recordForm">
+      <input type="text" id="name" placeholder="Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="text" id="phone" placeholder="Phone" required>
+      <input type="text" id="address" placeholder="Address" required>
+      <button type="submit">Add Record</button>
+    </form>
+
+    <h2>All Records</h2>
+    <table id="recordTable">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Address</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script>
+    // Fixed username and password
+    const validUsername = "admin";
+    const validPassword = "12345";
+
+    let records = JSON.parse(localStorage.getItem("records")) || [];
+
+    const recordForm = document.getElementById("recordForm");
+    const recordTable = document.querySelector("#recordTable tbody");
+    const loginPage = document.getElementById("loginPage");
+    const recordPage = document.getElementById("recordPage");
+
+    // Check session
+    if(localStorage.getItem("loggedIn") === "true"){
+      showRecordsPage();
+    }
+
+    function login(){
+      let user = document.getElementById("username").value;
+      let pass = document.getElementById("password").value;
+
+      if(user === validUsername && pass === validPassword){
+        localStorage.setItem("loggedIn", "true");
+        showRecordsPage();
+      } else {
+        document.getElementById("error").innerText = "Invalid Username or Password!";
+      }
+    }
+
+    function logout(){
+      localStorage.removeItem("loggedIn");
+      loginPage.style.display = "block";
+      recordPage.style.display = "none";
+    }
+
+    function showRecordsPage(){
+      loginPage.style.display = "none";
+      recordPage.style.display = "block";
+      renderRecords();
+    }
+
+    function renderRecords() {
+      recordTable.innerHTML = "";
+      records.forEach((record, index) => {
+        let row = `<tr>
+          <td>${index + 1}</td>
+          <td>${record.name}</td>
+          <td>${record.email}</td>
+          <td>${record.phone}</td>
+          <td>${record.address}</td>
+          <td class="actions">
+            <button onclick="deleteRecord(${index})" class="delete">Delete</button>
+          </td>
+        </tr>`;
+        recordTable.innerHTML += row;
+      });
+    }
+
+    function deleteRecord(index) {
+      records.splice(index, 1);
+      localStorage.setItem("records", JSON.stringify(records));
+      renderRecords();
+    }
+
+    recordForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const newRecord = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        address: document.getElementById("address").value,
+      };
+      records.push(newRecord);
+      localStorage.setItem("records", JSON.stringify(records));
+      renderRecords();
+      recordForm.reset();
+    });
+  </script>
+</body>
+</html>
+
