@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — R.K Infinity PowerSolutions</title>
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #fff8e1; /* soft yellow background */
+      color: #333;
+      line-height: 1.6;
+    }
+
+      /* Header */
+    header {
+      background-color: #f5c518; /* yellow */
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header img {
+      height: 60px;
+    }
+    nav a {
+      margin: 0 15px;
+      font-weight: bold;
+      color: #222;
+    }
+    nav a:hover {
+      color: #000;
+    }
+
+    nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff6f00; /* darker yellow on hover */
+    }
+
+    .banner {
+      background: url('images/banner.jpg') no-repeat center center/cover;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+      font-size: 2.5em;
+      font-weight: bold;
+      text-shadow: 2px 2px 8px rgba(255,255,255,0.7);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #fff3cd; /* light yellow container */
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #ff6f00;
+    }
+
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .about-content img {
+      flex: 1 1 300px;
+      border-radius: 10px;
+      max-width: 100%;
+      height: auto;
+      border: 3px solid #ffc107;
+    }
+
+    .about-text {
+      flex: 2 1 400px;
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    .about-text h2 {
+      color: #ff6f00;
+      margin-bottom: 10px;
+    }
+
+    .specifications {
+      margin-top: 30px;
+      background-color: #fff8e1;
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 5px solid #ff6f00;
+    }
+
+    .specifications h3 {
+      color: #ff6f00;
+      margin-bottom: 10px;
+    }
+
+    .specifications ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      color: #555;
+    }
+
+    footer {
+      background-color: #ffc107;
+      color: #333;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+      border-top: 3px solid #ff6f00; /* line above footer */
+    }
+
+    @media(max-width: 768px) {
+      .about-content {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>R.K Infinity PowerSolutions</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contect.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="banner">
+    Powering Your Future
+  </div>
+
+  <div class="container">
+    <h2 class="section-title">About Us</h2>
+    <div class="about-content">
+      <img src="images/genset1.jpg" alt="Genset Image">
+      <div class="about-text">
+        <h2>Who We Are</h2>
+        <p>
+          R.K Infinity PowerSolutions is a leading provider of high-quality power solutions and gensets. 
+          Our mission is to deliver reliable, efficient, and sustainable power solutions to businesses and households. 
+          With years of experience and a commitment to excellence, we ensure that our clients always stay powered up.
+        </p>
+        <p>
+          Our team of experts designs, installs, and maintains state-of-the-art generators and power systems. 
+          From small-scale residential setups to large industrial power plants, we have the expertise and the resources to handle all your power needs.
+        </p>
+
+        <div class="specifications">
+          <h3>Our Specifications & Services</h3>
+          <ul>
+            <li>High-capacity diesel and petrol gensets from 5kVA to 2000kVA</li>
+            <li>Automatic & manual generator control panels</li>
+            <li>Residential, commercial, and industrial power solutions</li>
+            <li>Maintenance, repair, and installation services</li>
+            <li>Eco-friendly and fuel-efficient generator systems</li>
+            <li>Customized power solutions as per client requirement</li>
+            <li>24/7 customer support and remote monitoring</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 R.K Infinity PowerSolutions. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
