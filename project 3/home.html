@@ -21,7 +21,7 @@
       color: inherit;
     }
 
-    /* Header */
+         /* Header */
     header {
       background-color: #f5c518; /* yellow */
       padding: 15px 20px;
@@ -42,6 +42,45 @@
     }
     nav a:hover {
       color: #000;
+    }
+
+    nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff6f00; /* darker yellow on hover */
+    }
+
+    .banner {
+      background: url('images/banner.jpg') no-repeat center center/cover;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+      font-size: 2.5em;
+      font-weight: bold;
+      text-shadow: 2px 2px 8px rgba(255,255,255,0.7);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #fff3cd; /* light yellow container */
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
 
     /* Hero Section */
@@ -175,24 +214,22 @@
 
   <!-- Header -->
   <header>
-    <img src="https://sdmntprukwest.oaiusercontent.com/files/00000000-2768-6243-ac81-6265d25c6feb/raw?se=2025-09-27T09%3A16%3A15Z&sp=r&sv=2024-08-04&sr=b&scid=6a44edf8-6cfa-5635-a40d-a05d3fb1a05e&skoid=0b778285-7b0b-4cdc-ac3b-fb93e8c3686f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-09-26T17%3A00%3A11Z&ske=2025-09-27T17%3A00%3A11Z&sks=b&skv=2024-08-04&sig=S/8PF/E4Q25kjUxGpGoRnbd3ps9T2JjK3sZ0znG9E5s%3D" alt="R.K Infinity Logo">
+    <img src="d/logo" alt="R.K Infinity Logo">
     <nav>
       <a href="home.html">Home</a>
       <a href="about us.html">About Us</a>
-      <a href="products.html">Products</a>
-      <a href="pricing.html">Pricing</a>
+      <a href="product.html">Products</a>
       <a href="contect.html">Contact</a>
     </nav>
   </header>
 
-  <!-- Hero Section -->
+ <!-- Hero Section -->
   <div class="hero">
     <div class="hero-content">
       <h1></h1>
       <p></p>
     </div>
   </div>
-
   <!-- About Preview -->
   <section>
     <h2>About Us</h2>
@@ -205,7 +242,7 @@
     </div>
   </section>
 
-   <!-- Products Section -->
+   <!-- Products Section 1-->
   <section>
     <h2>Our Products</h2>
     <div class="products">
@@ -228,7 +265,7 @@
   </section>
 
 
-   <!-- Products Section -->
+   <!-- Products Section 2-->
   <section>
     
     <div class="products">
